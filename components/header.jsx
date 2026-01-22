@@ -14,9 +14,16 @@ import React from 'react'
 import { useStoreUser } from '@/hooks/use-store-user'
 import { Button } from './ui/button'
 import { Plus } from 'lucide-react'
+import { useOnboarding } from '@/hooks/use-onboarding'
+import OnboardingModal from './onboarding-modal'
 
 export default function Header() {
     const { isLoading } = useStoreUser();
+
+
+    const { showOnboarding, handleOnboardingComplete, handleOnboardingSkip } =
+        useOnboarding();
+
     return (
         <>
 
@@ -83,6 +90,14 @@ export default function Header() {
                     </div>
                 )}
             </nav>
+
+            {/* Onboarding Modal */}
+            <OnboardingModal
+                isOpen={showOnboarding}
+                onClose={handleOnboardingSkip}
+                onComplete={handleOnboardingComplete}
+            />
+
 
         </>
     )
