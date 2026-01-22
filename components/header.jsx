@@ -16,6 +16,7 @@ import { Button } from './ui/button'
 import { Plus } from 'lucide-react'
 import { useOnboarding } from '@/hooks/use-onboarding'
 import OnboardingModal from './onboarding-modal'
+import SearchLocationBar from './search-location-bar'
 
 export default function Header() {
     const { isLoading } = useStoreUser();
@@ -39,6 +40,10 @@ export default function Header() {
                             priority
                         />
                     </Link>
+
+                    <div className="hidden md:flex flex-1 justify-center">
+                        <SearchLocationBar />
+                    </div>
 
                     <div className="flex items-center">
                         <Authenticated>
