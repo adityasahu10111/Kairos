@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ConvexClientProvider } from "./ConvexClientProvider";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "sonner";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -43,6 +44,8 @@ export default function RootLayout({ children }) {
                 {/* Page content (above glow) */}
                 <div className="relative z-10">{children}</div>
               </main>
+
+              <Toaster position="top-center" richColors />
           </ConvexClientProvider> 
           </ClerkProvider>
         </ThemeProvider>

@@ -40,7 +40,7 @@ export default function Header() {
                             </Button>
 
                             <Button variant="ghost" size="sm" asChild>
-                                <Link href="/">Explore</Link>
+                                <Link href="/explore">Explore</Link>
                             </Button>
 
                             <Button size="sm" asChild className="flex gap-2 mr-3">
